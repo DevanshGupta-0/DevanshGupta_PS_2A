@@ -1,2 +1,2305 @@
 Problem Solving Code:
 
+DAY 2 Q5-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 5 ;
+        int b = 63 + n;
+        char a = (char)(b);
+        //Outer Loop for Number of rows
+        for( int i = 1; i<=n; i++){
+            //inner loop for printing
+            for(int j = 1; j<=i; j++){
+                a++;
+                System.out.print(a);
+            }
+            a = (char)(a-i-1);
+            System.out.println();
+        }
+
+    }
+}
+
+DAY 2 Q6-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 4 ;
+        //Outer Loop for Number of rows
+        for( int i = 1; i<=n; i++){
+            int c = i;
+            //inner loop for Spaces
+            for(int j = 1; j<=n-i; j++){
+                System.out.print(" ");
+            }
+            //inner loop for printing
+            for(int j = 1; j<=2*i-1; j++){
+                if(j<i){
+                    System.out.print(c);
+                    c++;
+                }
+                else{
+                    System.out.print(c);
+                    c--;
+                }
+            }
+
+            System.out.println();
+        }
+
+    }
+}
+
+Day 2 Q7-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 4 ;
+        //Outer Loop for Number of rows
+        for( int i = 1; i<=n; i++){
+            int c = i;
+            //inner loop for Spaces
+            for(int j = 1; j<=n-i; j++){
+                System.out.print(" ");
+            }
+            //inner loop for printing
+            for(int j = 1; j<=2*i-1; j++){
+                if(j<i){
+                    System.out.print(c);
+                    c--;
+                }
+                else{
+                    System.out.print(c);
+                    c++;
+                }
+            }
+
+            System.out.println();
+        }
+
+    }
+}
+
+Day 2 Q8-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 4 ;
+        //Outer Loop for Number of rows
+        for( int i = 1; i<=n; i++){
+            int c = i;
+            //inner loop for Spaces
+            for(int j = 1; j<=n-i; j++){
+                System.out.print(" ");
+            }
+            //inner loop for printing
+            for(int j = 1; j<=2*i-1; j++){
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+    }
+}
+
+Day 2 Q9-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 5 ;
+        if(n%2==0) {
+            //For even n
+            //Outer Loop 1 for 1st Half
+            for (int i = 1; i <= n/2; i++) {
+                //inner loop for Spaces
+                for (int j = 1; j <= n/2 - i; j++) {
+                    System.out.print(" ");
+                }
+                //inner loop for printing pattern
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            //Outer Loop 2 for Printing 2nd Half
+            for (int i = n/2; i >= 1; i--) {
+                //Inner Loop for Spaces
+                for(int j = n/2 - i; j>=1; j--){
+                    System.out.print(" ");
+                }
+                //Inner loop for Pattern
+                for (int j = 2*i - 1; j >= 1; j--) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+        }
+        else {
+            //For odd n
+            //Outer Loop 1 for 1st Half
+            for (int i = 1; i <= n/2 +1; i++) {
+                //inner loop for Spaces
+                for (int j = 1; j <= n/2 +1 - i; j++) {
+                    System.out.print(" ");
+                }
+                //inner loop for printing pattern
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            //Outer Loop 2 for Printing 2nd Half
+            for (int i = n/2; i >= 1; i--) {
+                //Inner Loop for Spaces
+                for(int j = n/2+1 - i; j>=1; j--){
+                    System.out.print(" ");
+                }
+                //Inner loop for Pattern
+                for (int j = 2*i - 1; j >= 1; j--) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+
+        }
+
+    }
+}
+
+Day 2 Q10-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 5 ;
+        if(n%2==0) {
+            //For even n
+            //Outer Loop 1 for 1st Half
+            for (int i = n/2; i >= 1; i--) {
+                //inner loop for Spaces
+                for(int j = n/2 - i; j>=1; j--){
+                    System.out.print(" ");
+                }
+                //inner loop for printing pattern
+                for (int j = 2 * i - 1; j >= 1; j--) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            //Outer Loop 2 for Printing 2nd Half
+            for (int i = 1; i <= n/2; i++) {
+                //Inner Loop for Spaces
+                for(int j = 1; j<= n/2 - i; j++){
+                    System.out.print(" ");
+                }
+                //Inner loop for Pattern
+                for (int j = 1; j <= 2*i - 1; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+        }
+        else {
+            //For odd n
+            //Outer Loop 1 for Printing 2nd Half
+            for (int i = n/2; i >= 1; i--) {
+                //Inner Loop for Spaces
+                for(int j = n/2 - i; j>=1; j--){
+                    System.out.print(" ");
+                }
+                //Inner loop for Pattern
+                for (int j = 2*i + 1; j >= 1; j--) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            //Outer Loop 2 for 1st Half
+            for (int i = 1; i <= n/2 +1; i++) {
+                //inner loop for Spaces
+                for (int j = 1; j <= n/2 +1 - i; j++) {
+                    System.out.print(" ");
+                }
+                //inner loop for printing pattern
+                for (int j = 1; j <= 2 * i - 1; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+
+
+        }
+
+    }
+}
+
+Day 2 Q11 -
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+        //Outer Loop for Rows
+        for (int i = 1; i <= n; i++) {
+            int x = 0;
+            //inner loop for printing numbers
+            for (int j = 1; j <= i; j++) {
+                x++;
+                System.out.print(x);
+            }
+            //inner loop for Spaces
+            for(int j = 1; j<=2*n-2*i; j++){
+                System.out.print(" ");
+            }
+            //inner loop for printing numbers
+            for (int j = 1; j <= i; j++) {
+                System.out.print(x);
+                x--;
+            }
+            System.out.println();
+        }
+    }
+}
+
+Day 2 Q12-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 6;
+        //Outer Loop for Rows
+        for (int i = 0; i < n; i++) {
+            int x = 0;
+            //inner loop for printing numbers
+            for (int j = 1; j <= n-i; j++) {
+                x++;
+                System.out.print(x);
+            }
+            //inner loop for Spaces
+            for(int j = 2*i-1; j >= 1 ; j--){
+                System.out.print(" ");
+            }
+            //inner loop for printing numbers
+            for (int j = 1; j <= n-i; j++) {
+                //condition for first row's 2nd half elements
+                if(i==0){
+                    if(j==n-i){
+                        break;
+                    }
+                    x--;
+                    System.out.print(x);
+                }
+                else{
+                    System.out.print(x);
+                    x--;
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+Day 2 Q13-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n=10;
+        printPat(n);
+    }
+     //Recursive Function
+     static void printPat(int n){
+        if(n<=0){
+            System.out.print(n+" ");
+            return;
+        }
+        System.out.print(n+" ");
+        printPat(n-5);
+
+        System.out.print(n+" ");
+    }
+}
+
+Day 2 Q14-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n = 4;
+     for (int i = 1; i<=n; i++) {
+         if (i == 1 || i == n) {
+             for (int j = 1;  j<=n; j++) {
+                 System.out.print("*");
+             }
+         }
+         else{
+             for(int j = 1; j<=n-i; j++){
+                 System.out.print(" ");
+             }
+             System.out.print("*");
+         }
+         System.out.println();
+     }
+    }
+}
+
+Day 2 Q15-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n = 6;
+     System.out.println(rowPrint(n));
+    }
+    static String rowPrint(int n){
+        if(n==1){
+            return "1";
+        }
+        if(n==2){
+            return "11";
+        }
+        String str = "11";
+        for(int i = 3; i<=n; i++){
+            str += '#'; //Any Random char just for traversing
+            int count = 1;
+            String temp = "";
+            char[] a = str.toCharArray();
+            for(int j=1; j<str.length(); j++){
+                if(a[j]==a[j-1]){
+                    count++;
+                }
+                else{
+                    temp += count + 0 ;
+                    temp += a[j-1];
+                    count = 1;
+                }
+            }
+            str = temp;
+
+        }
+        return str;
+
+    }
+}
+
+Day 2 Q16-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 4, k=n;
+        int highest = 2*n-2;
+        int lowest = 0;
+        int[][] ar = new int[100][100];
+        while(n>0) {
+            for (int i = lowest; i <= highest; i++) {
+                for(int j = lowest; j <= highest ; j++ ){
+                    if(i==highest || j == highest || i==lowest || j==lowest) {
+                        ar[i][j] = n;
+                    }
+                }
+            }
+            n--;
+            lowest++;
+            highest--;
+        }
+        for (int i = 0; i <= 2*k-2; i++) {
+            for(int j = 0; j<= 2*k-2; j++){
+                System.out.print(ar[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+Day 2 Q17-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 3 ;
+        for( int i = 1; i<=n; i++){
+            int c = 1;
+
+            for(int j = 1; j<=2*i-1; j++){
+                if(j<i){
+                    System.out.print(c);
+                    c++;
+                }
+                else{
+                    System.out.print(c);
+                    c--;
+                }
+            }
+
+            System.out.print(" ");
+        }
+
+    }
+}
+
+Day 2 Q18-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        String S = "Test";
+        str(S);
+    }
+    static void str(String S) {
+        int l = S.length();
+        char[] a = S.toCharArray();
+        System.out.print(S);
+        for(int i =0; i<l-1; i++){
+            a[i]='.';
+            System.out.println();
+            for(int j=0; j<l; j++){
+                System.out.print(a[j]);
+            }
+        }
+    }
+}
+
+Day 3 Q1-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n=5,f=1,sum=0;
+     for(int i=1; i<=n; i++){
+         f=f*i;
+         sum += f;
+     }
+     System.out.print(sum);
+    }
+}
+
+Day 3 Q2-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n=3,f=1;
+     float sum=0, g;
+     for(int i=1; i<=n; i++){
+         f=f*i;
+         g = f/i;
+         sum += g;
+     }
+     System.out.print(sum);
+    }
+}
+
+Day 3 Q3-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n=4,x=2;
+     int f=1;
+     float sum=1, g;
+     for(int i=1; i<=n-1; i++){
+         f=f*i;
+         g = x*((float)i/f);
+         sum += g;
+     }
+     System.out.print(sum);
+    }
+}
+
+Day 3 Q4-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n=3,x=2;
+     int f=1;
+     float sum=1, g;
+     for(int i=1; i<=n-1; i++){
+         f=f*i;
+         g = x*((float)i/f);
+         if(i%2==0) {
+             sum += g;
+         }
+         else{
+             sum -= g;
+         }
+     }
+     System.out.print(sum);
+    }
+}
+
+Day 3 Q5-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n=4,x=10,c=1;
+     int f=1;
+     float sum=0, g;
+     for(int i=1; i<=2*n-1; i++){
+         int j = i;
+         f=f*i;
+         if(i%2==0){
+             continue;
+         }
+         else {
+             g = x * ((float) i / f);
+             //x is the first term
+             if(c%2==0) {
+                 sum -= g;
+                 c++;
+             }
+             else{
+                 sum += g;
+                 c++;
+             }
+         }
+     }
+     System.out.print(sum);
+    }
+}
+
+Day 3 Q6-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     int n=3,x=10,c=1;
+     int f=1;
+     float sum=1, g;
+     for(int i=1; i<=2*n-1; i++){
+         int j = i;
+         f=f*i;
+         if(i%2!=0){
+             continue;
+         }
+         else {
+             g = x * ((float) i / f);
+             if(c%2==0) {
+                 sum += g;
+                 c++;
+             }
+             else{
+                 sum -= g;
+                 c++;
+             }
+         }
+     }
+     System.out.print(sum);
+    }
+}
+
+Day 3 Q7-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 3;
+        seriesSum(n);
+    }
+    static void seriesSum(int n){
+        int f=1,c=1;
+        float sum=0, g;
+        for(int i=1; i<=2*n-1; i++){
+            f=f*i;
+            if(i%2!=0){
+                g = ((float)c / f);
+                if(c%2==0) {
+                    sum -= g;
+                }
+                else{
+                    sum += g;
+                }
+                c++;
+            }
+        }
+        System.out.print(sum);
+
+    }
+}
+
+Day 3 Q8-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 4;
+        seriesSum(n);
+    }
+    static void seriesSum(int n){
+        int sum = 0;
+        for(int i=1; i<=n; i++){
+            sum += i*(i+1)*(i+2);
+        }
+        System.out.print(sum);
+
+    }
+}
+
+Day 3 Q9-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 4;
+        printPattern(n);
+    }
+    static void printPattern(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.print(" ");
+        }
+    }
+}
+
+Day 4 Q1-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 1221;
+        int reverse = revNum(n,0);
+        if (reverse == n){
+            System.out.println("Palindrome");
+        }
+        else
+            System.out.println("Not Palindrome");
+    }
+    static int revNum(int n, int rev){
+        if(n==0){
+            return rev;
+        }
+        rev = rev*10 + n%10;
+        return revNum(n/10,rev);
+
+    }
+}
+
+Day 4 Q2-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the number of elements: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[100];
+        System.out.print("Enter your Elements: ");
+        for(int i = 0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("The mean is: "+mean(arr,n));
+        System.out.print("The median is: "+median(arr,n));
+    }
+    public static float mean(int[] a, int n){
+        float sum = 0;
+        for(int i = 0; i<n; i++){
+            sum += a[i];
+        }
+        return sum/n;
+    }
+
+    public static float median(int[] a, int n){
+        //Arranging in Ascending Order
+        for(int i = 0; i<n-1; i++){
+            for(int j = 0; j<n-i-1; j++){
+                if(a[j]>a[j+1]){
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
+        if(n%2==0)
+            return (float)(a[(n/2+1)-1] + a[(n/2)-1])/2;
+        else{
+            return a[((n+1)/2)-1];
+        }
+    }
+}
+
+Day 4 Q2 (Method 2)-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the number of elements: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[100];
+        System.out.print("Enter your Elements: ");
+        for(int i = 0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("The mean is: "+mean(arr,n));
+        System.out.print("The median is: "+median(arr,n));
+    }
+    //Method 2 for the same Program
+    public static float mean(int[] a, int n){
+        //using recursion this time
+        if ( n==1)
+            return a[n-1];
+        else{
+            return (float)(mean(a,n-1)*(n-1) + a[n-1])/n;
+        }
+    }
+
+    public static float median(int[] a, int n){
+        //Arranging in Ascending Order
+        for(int i = 0; i<n-1; i++){
+            for(int j = 0; j<n-i-1; j++){
+                if(a[j]>a[j+1]){
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
+        //Because of indexing starts from 0 the below can also be used
+        return (float)(a[(n-1)/2] + a[n/2])/2;
+
+
+    }
+}
+
+
+Day 4 Q3-
+
+
+
+
+Day 4 Q4-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the starting and Ending of the Range:" );
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        for(int i = m; i<=n; i++){
+            //checking i>1 because 1/2 = 0 in int and cannot be used to divide in the function
+            if(i>1) {
+                if (i == perfectNum(i, i / 2,0)) {
+                    System.out.println(i + " is a Perfect Number");
+                }
+            }
+        }
+    }
+
+    public static int perfectNum(int m, int i, int sum){
+
+        if(i==1){
+            return sum+1;
+        }
+        if(m%i==0){
+            sum += i;
+        }
+        return perfectNum(m,i-1,sum);
+
+    }
+
+
+}
+
+Day 4 Q5-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the starting and Ending of the Range:" );
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        for(int i = m; i<=n; i++){
+
+            if (FactCount(i, i,0)==2) {
+                    System.out.println(i + " is a Prime Number");
+            }
+        }
+    }
+
+    public static int FactCount(int m, int i, int sum){
+
+        if(i==1){
+            return sum+1;
+        }
+        if(m%i==0){
+            sum += 1;
+        }
+        return FactCount(m,i-1,sum);
+
+    }
+
+
+}
+
+Day 4 Q6-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the starting and Ending of the Range:" );
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.print("The Armstrong Number(s) in the Range are: ");
+        for(int i = m; i<=n; i++){
+            int len = String.valueOf(i).length(); //int len = (int)(Math.log10(i) + 1) can also be used
+            if (Arm(i,0,len)==i) {
+                    System.out.print(i+" ");
+            }
+        }
+    }
+
+    public static int Arm(int m, int sum, int l){
+
+        if(m==0){
+            return sum;
+        }
+        return Arm(m/10,sum + (int)Math.pow(m%10,l),l);
+
+    }
+
+
+}
+
+Day 4 Q7-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the starting and Ending of the Range:" );
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.print("The Strong Number(s) in the Range are: ");
+        for(int i = m; i<=n; i++){
+            if (Strong(i,0)==i) {
+                    System.out.print(i+" ");
+            }
+        }
+    }
+
+    public static int Strong(int m, int sum){
+
+        if(m==0){
+            return sum;
+        }
+        int x = 1;
+        for(int i = 1; i<=m%10; i++){
+            x = x*i;
+        }
+        return Strong(m/10,sum + x );
+
+    }
+}
+
+Day 4 Q8-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter 2 numbers :" );
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.print("The GCD is: "+gcd(m,n));
+    }
+    public static int gcd(int m, int n){
+        if(n==0)
+            return m;
+        return gcd(n,m%n);
+    }
+}
+
+Day 4 Q9-
+
+Method 1 (StackOverFlow Problem on Higher Values):
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter 2 numbers :" );
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.print("The lcm is: "+lcm(m,n,1));
+    }
+    public static int lcm(int m, int n, int i){
+        if(i%m == 0 && i%n==0) {
+            return i;
+        }
+        return lcm(m,n,i+1);
+    }
+}
+
+Method 2:
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter 2 numbers :" );
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.print("The lcm is: "+lcm(m,n));
+    }
+    public static int lcm(int m, int n){
+        return m*n/gcd(m,n);
+    }
+    public static int gcd(int m, int n){
+        if(n==0)
+            return m;
+        return gcd(n,m%n);
+    }
+}
+
+
+Day 4 Q10-
+
+
+
+Day 5 Q1-
+
+Method 1 (By recursion):
+
+import java.util.*;
+class Chocolates {
+    public static void main(String[] args) {
+        int [] arr = {6,3,5,5,4,7,8,4,3,1,4,5,7,3,5,6};
+        System.out.print(chocolates(arr,0,arr.length-1));
+    }
+     public static int chocolates(int[] arr, int si, int ei) {
+        if(si == ei){
+            return arr[si];
+        }
+        if (arr[si] > arr[ei]){
+            si = si+1;
+        }
+        else{
+            ei = ei -1;
+        }
+        return chocolates(arr,si,ei);
+        
+    }
+}
+
+Method 2 (By Loop):
+
+import java.util.*;
+class Chocolates {
+    public static void main(String[] args) {
+        int [] arr = {6,3,5,5,4,7,8,4,1,7,4,5,7,3,5,6};
+        System.out.print(chocolates(arr.length,arr));
+    }
+     public static int chocolates(int n, int[] arr) {
+        int si = 0, ei = n-1;
+        while (si!=ei){
+            if (arr[si] > arr[ei])
+                si++;
+            else
+                ei--;
+        }
+        return arr[si];
+        
+    }
+}
+
+
+Day 5 Q2-
+
+Method 1 (By Loop):
+
+import java.util.*;
+class candles {
+    public static void main(String[] args) {
+        long [] arr = {6,3,5,5,4,7,8,4,1,7,4,5,7,3,5,6};
+        System.out.print(maxDays(arr,arr.length));
+    }
+     static long maxDays(long arr[], int n){
+         /*Room will  be illuminated until
+         the length of highest candle becomes 
+         0 which will take exactly the number of
+         days equal to its height*/
+        long max = arr[0];
+        for(int i = 0; i<n; i++){
+            if (arr[i] > max){
+                max = arr[i];
+            }
+        }
+    
+        return max;
+    }
+}
+
+Method 2 (By Recursion):
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class pgm {
+    public static void main(String[] args) {
+        int [] arr = {6,3,5,5,4,7,4,1,7,4,5,7,3,5,6};
+        System.out.print(maxDays(arr,0,arr.length-1,arr[0]));
+    }
+     static int maxDays(int arr[], int si, int ei, int max){
+         if(arr[si]>max)
+            max = arr[si];
+        /*base case neeche is liye hai
+        kyunki agar largest last me hai
+        to condition check hone se pehle 
+        hi base case hit ho jaaega*/
+         if(si == ei)
+            return max;
+         return maxDays(arr,si+1,ei,max);
+        
+    }
+}
+
+Day 5 Q3-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,5};
+        System.out.print("The sum is: "+multiply(arr,arr.length));
+    }
+    public static int multiply (int[] arr, int n) {
+        int si1 = 0, ei1 = n/2 - 1;
+        int si2 = ei1 + 1, ei2 = n-1;
+        int sum1 = 0, sum2 = 0;
+        for(int i = si1; i<= ei1; i++){
+            sum1 = sum1 + arr[i];
+        }
+        for(int i = si2; i<= ei2; i++){
+            sum2 = sum2 + arr[i];
+        }
+        return sum1*sum2;
+    }
+}
+
+Day 5 Q4-
+
+Method 1 (not by returning but printing the array directly):
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        long[] arr = {55,76,43,1,123,111,143,321,987,897,0,999,765,767};
+        long k = 1000;
+        getDigitDiff1AndLessK(arr,arr.length,k);
+    }
+    static void getDigitDiff1AndLessK(long[] arr, int n, long k) {
+        long[] a = new long[100];
+        int j = 0;
+        long[] b = new long[100];
+        for (int i = 0; i<n; i++){
+            if (arr[i] < k){
+                a[j] = arr[i];
+                j++;
+            }
+        }
+        int x = 0;
+        for (int i = 0; i<a.length; i++){
+            String str = String.valueOf(a[i]);
+            if(str.length() != 1){
+                for (j = 0; j<str.length()-1; j++) {
+                    if ((long) str.charAt(j) - (long) str.charAt(j + 1) != 1 && (long) str.charAt(j) - (long) str.charAt(j + 1) != -1) {
+                        break;
+                    }
+                }
+                if (j==str.length()-1)
+                    b[x++] = a[i];
+            }
+        }
+        for (int i = 0; i<x; i++){
+            System.out.print(b[i] + " ");
+        }
+    }
+}
+
+Method 2(Returning Array in geeksbyGeeks)
+
+class Solution {
+    long[] getDigitDiff1AndLessK(long[] arr, int n, long k) {
+        long[] a = new long[10000];
+        int j = 0;
+        long[] b = new long[10000];
+        for (int i = 0; i<n; i++){
+            if (arr[i] < k){
+                a[j] = arr[i];
+                j++;
+            }
+        }
+        int x = 0;
+        for (int i = 0; i<a.length; i++){
+            String str = String.valueOf(a[i]);
+            if(str.length() != 1){
+                for (j = 0; j<str.length()-1; j++) {
+                    if ((long) str.charAt(j) - (long) str.charAt(j + 1) != 1 && (long) str.charAt(j) - (long) str.charAt(j + 1) != -1) {
+                        break;
+                    }
+                }
+                if (j==str.length()-1)
+                    b[x++] = a[i];
+            }
+        }
+        long ar2[] = new long[x];
+        for(int i = 0; i<x; i++)
+            ar2[i] = b[i];
+        return ar2;
+    }
+}
+
+
+Day 5 Q5-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        arrPrint(n);
+    }
+    public static void arrPrint(int n){
+        int[] arr = new int[100];
+        int index = 0;
+        for (int i = 1; i<n; i++){
+            if (i%2 != 0)
+                arr[index++] = i;
+        }
+        for (int j = n; j>=1; j--){
+            if (j%2 == 0)
+                arr[index++] = j;
+        }
+        System.out.print("The Required Array is: ");
+        for (int i = 0; i<n; i++)
+            System.out.print(arr[i]+" ");
+    }
+}
+
+Day 5 Q6-
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1,3,4,5,6,7};
+        swapAlternate(arr);
+    }
+    public static void swapAlternate(int[] arr){
+        for(int i = 1; i<arr.length; i = i+2){
+            int temp = arr[i];
+            arr[i] = arr[i-1];
+            arr[i-1] = temp;
+        }
+        for(int i = 0; i<arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+/*isme i ko 0 se isliye nahi start kia aur i+1 ko index swapping me nahi use kia
+kyunki i+1 pe swapping se(i starting from 0) odd array me last element pe aate 
+time ek error aata hai array index out of bounds, isliye odd array ko dimag me rakhte 
+hue hamne ye alternative approach lagayi hai*/
+
+Day 5 Q7-
+
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1,3,4,5,6,7,8};
+        revArray(arr);
+    }
+    public static void revArray(int[] arr){
+        int l = arr.length;
+        for(int i = 0; i<l/2; i++){
+            int temp = arr[i];
+            arr[i] = arr[l-i-1];
+            arr[l-i-1] = temp;
+        }
+        for(int i = 0; i<arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+
+
+Day 6 Q1-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int [][] a = new int[100][100];
+        System.out.print("Rows & Columns for Mat.A: ");
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.println("Enter the elements of Mat.A: ");
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+        matrixRot90clockwise(a,m,n);
+
+    }
+
+    public static void matrixRot90clockwise(int[][] a,int m, int n){
+        int[][] b = new int[n][m];
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                b[j][i] = a[i][j];
+            }
+        }
+        //Reversing the elements in all rows
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<m/2; j++){
+                int temp = b[i][j];
+                b[i][j] = b[i][m-j-1];
+                b[i][m-j-1] = temp;
+            }
+        }
+        System.out.println("The 90 Degree Clockwise rotation is: ");
+        for(int i = 0; i<n; i++){
+            for (int j = 0; j<m; j++){
+                System.out.print(b[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Day 6 Q2-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int [][] a = new int[100][100];
+        System.out.print("Rows & Columns for Mat.A: ");
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.println("Enter the elements of Mat.A: ");
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+        matrixRot90anticlockwise(a,m,n);
+
+    }
+
+    public static void matrixRot90anticlockwise(int[][] a,int m, int n){
+        int[][] b = new int[n][m];
+        //First: Transpose the Matrix
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                b[j][i] = a[i][j];
+            }
+        }
+        //Second: Reverse the elements in all columns
+        for(int j = 0; j<m; j++){
+            for(int i = 0; i<n/2; i++){
+                int temp = b[i][j];
+                b[i][j] = b[n-i-1][j];
+                b[n-i-1][j] = temp;
+            }
+        }
+        System.out.println("The 90 Degree Anti-Clockwise rotation is: ");
+        for(int i = 0; i<n; i++){
+            for (int j = 0; j<m; j++){
+                System.out.print(b[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Day 6 Q3-
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int[][] a = new int[100][100];
+        System.out.print("Rows & Columns for Mat.A: ");
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        if(m != n)
+            System.out.println("A non-Square Matrix cannot be a Magic Matrix");
+        else{
+                System.out.println("Enter the elements of Mat.A: ");
+                for (int i = 0; i < m; i++) {
+                    for (int j = 0; j < n; j++) {
+                        a[i][j] = sc.nextInt();
+                    }
+                }
+                if (isMagic(a,n))
+                    System.out.print("The Given Matrix is a Magic Matrix");
+                else {
+                    System.out.print("The Given Matrix is not a Magic Matrix");
+                }
+        }
+    }
+
+        public static boolean isMagic(int[][] a, int n){
+            int sum = (n*(n*n + 1))/2;
+            int sumR = 0; //sum of row
+            int sumC = 0; //sum of col
+            int sumD1 = 0; //sum of Diagonal1
+            int sumD2 = 0; //sum of Diagonal2
+            //Checking for Rows
+            for(int i = 0; i<n; i++) {
+                sumR = 0;
+                for (int j = 0; j < n; j++)
+                    sumR += a[i][j];
+                if (sumR != sum)
+                    return false;
+            }
+            //Checking for Columns
+            for(int i = 0; i<n; i++) {
+                sumC = 0;
+                for (int j = 0; j < n; j++)
+                    sumC += a[j][i];
+                if (sumC != sum)
+                    return false;
+            }
+            //Checking for Diagonal1
+            for(int i = 0,j=0; i<n; i++,j++)
+                sumD1 += a[i][j];
+            if(sumD1 != sum)
+                return false;
+            //Checking for Diagonal2
+            for(int i = 0,j=n-1; i<n; i++,j--)
+                sumD2 += a[i][j];
+            if(sumD2 != sum)
+                return false;
+
+            return true;
+        }
+}
+
+
+Day 6 Q4-
+
+Method 1(Only valid for square matrix but can do the job without making new matrices):
+ import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int [][] a = new int[100][100];
+        System.out.print("Rows & Columns for Square Mat.A: ");
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.println("Enter the elements of Mat.A: ");
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+        int temp;
+        matrixRot90clockwise(a,m,n);
+        matrixRot90clockwise(a,m,n);
+        System.out.println("The 180 Degree Clockwise rotation is: ");
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void matrixRot90anticlockwise(int[][] a,int m, int n){
+
+        //First: Transpose the Matrix
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<i; j++){
+                int temp = a[j][i];
+                a[j][i] = a[i][j];
+                a[i][j] = temp;
+            }
+        }
+        //Second: Reverse the col elements
+        for(int j = 0; j<m; j++){
+            for(int i = 0; i<n/2; i++){
+                int temp = a[i][j];
+                a[i][j] = a[n-i-1][j];
+                a[n-i-1][j] = temp;
+            }
+        }
+
+    }
+    
+    public static void matrixRot90clockwise(int[][] a,int m, int n){
+
+        //First: Transpose the Matrix
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<i; j++){
+                int temp = a[j][i];
+                a[j][i] = a[i][j];
+                a[i][j] = temp;
+            }
+        }
+        //Second: Reverse the row elements
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<m/2; j++){
+                int temp = a[i][j];
+                a[i][j] = a[i][m-j-1];
+                a[i][m-j-1] = temp;
+            }
+        }
+
+    }
+}
+
+Method 2(can do the job for m*n, but needs new matrices to be formed with every 90 degree change):
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int [][] a = new int[100][100];
+        System.out.print("Rows & Columns for Mat.A: ");
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        System.out.println("Enter the elements of Mat.A: ");
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+        int[][] b = new int[100][100];
+        int[][] c = new int[100][100];
+        matrixRot90clockwise(a,m,n,b);
+        int temp = m;
+        m = n;
+        n = temp;
+        matrixRot90clockwise(b,m,n,c);
+        temp = m;
+        m = n;
+        n = temp;
+        System.out.println("The 180 Degree Clockwise rotation is: ");
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                System.out.print(c[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void matrixRot90anticlockwise(int[][] a,int m, int n,int[][] rot){
+
+        //First: Transpose the Matrix
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                rot[j][i] = a[i][j];
+            }
+        }
+        //Second: Reverse the col elements
+        for(int j = 0; j<m; j++){
+            for(int i = 0; i<n/2; i++){
+                int temp = rot[i][j];
+                rot[i][j] = rot[n-i-1][j];
+                rot[n-i-1][j] = temp;
+            }
+        }
+
+    }
+    public static void matrixRot90clockwise(int[][] a,int m, int n,int[][] rot){
+
+        //First: Transpose the Matrix
+        for(int i = 0; i<m; i++){
+            for (int j = 0; j<n; j++){
+                rot[j][i] = a[i][j];
+            }
+        }
+        //Second: Reverse the row elements
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<m/2; j++){
+                int temp = rot[i][j];
+                rot[i][j] = rot[i][m-j-1];
+                rot[i][m-j-1] = temp;
+            }
+        }
+
+    }
+}
+
+Day 6 Q5-
+
+
+
+
+
+Day 7 Q1-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String: ");
+        String str = sc.nextLine();
+        System.out.print("The Length of the Given String is: "+stringLength(str));
+    }
+    public static int stringLength(String str){
+        str += '\u0000';
+        int len = 0;
+        for(int i = 0; str.charAt(i)!= '\u0000' ; i++)
+            len++;
+        return len;
+    }
+}
+
+Day 7 Q2-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String: ");
+        String s = sc.nextLine();
+        System.out.print("The Reverse is: "+stringRev(s));
+    }
+    public static String stringRev(String str){
+        int len = str.length();
+        char[] arr = str.toCharArray();
+
+        for (int i = 0; i<len/2; i++){
+            char temp = arr[i];
+            arr[i] = arr[len-i-1];
+            arr[len-i-1] = temp;
+        }
+        str = String.valueOf(arr);
+
+        return str;
+    }
+}
+
+Day 7 Q3-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String: ");
+        String s = sc.nextLine();
+        if (s.equals(revString(s)))
+            System.out.print("The String is Palindrome");
+        else
+            System.out.print("The String is not Palindrome");
+    }
+
+    public static String revString(String str){
+        int len = str.length();
+        char[] arr = str.toCharArray();
+
+        for (int i = 0; i<len/2; i++){
+            char temp = arr[i];
+            arr[i] = arr[len-i-1];
+            arr[len-i-1] = temp;
+        }
+        str = String.valueOf(arr);
+
+        return str;
+    }
+}
+
+Day 7 Q4-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String: ");
+        String s = sc.nextLine();
+        System.out.print("The number of words are: "+wordCount(s));
+    }
+
+    public static int wordCount(String str){
+        //word count = spaces in between+1
+        int spaces = 0;
+        char[] arr = str.toCharArray();
+        for(int i = 0; i<str.length(); i++){
+            if (arr[i] == ' ')
+                spaces++;
+        }
+
+        return spaces+1;
+    }
+}
+
+Day 7 Q5-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String: ");
+        String s = sc.nextLine();
+        caseChange(s);
+    }
+
+    public static void caseChange(String str){
+        char[] arr = str.toCharArray();
+        for(int i = 0; i<str.length(); i++ ){
+            if(arr[i] != ' '){
+               if(arr[i]>= (char)65 && arr[i]<=(char)92 )
+                   arr[i] = (char)(arr[i] + 32);
+               else
+                   arr[i] = (char)(arr[i] - 32);
+            }
+        }
+        str =  String.valueOf(arr);
+        System.out.print("The case changed String is: "+str);
+
+    }
+}
+
+Day 7 Q6-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your Strings: ");
+        String s = sc.nextLine();
+        String s2 = sc.nextLine();
+        compStr(s,s2);
+    }
+
+    public static void compStr(String str, String str2){
+        char[] arr = str.toCharArray();
+        char[] arr2 = str2.toCharArray();
+        int flag = 0;
+        if(str.length() != str2.length())
+            flag = 1;
+        else {
+            for(int i = 0; i<str.length(); i++) {
+                if(arr[i] != arr2[i]) {
+                    flag = 1;
+                    break;
+                }
+            }
+        }
+        if(flag == 0)
+            System.out.print("The Strings are Equal");
+        else
+            System.out.print("The Strings are not Equal");
+    }
+}
+
+Day 7 Q7-
+
+In Java:
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String 1: ");
+        String str = sc.nextLine();
+        System.out.print("Enter your String 1: ");
+        String str2 = sc.nextLine();
+        System.out.print(strConc(str,str2));
+    }
+    static String strConc(String str, String str2){
+        return str + str2;
+
+    }
+}
+
+In C:
+
+#include<stdio.h>
+void strConcat(char str[], char str2[], int l){
+    int i;
+    for(i = 0; str2[i] != '\0'; i++){
+        str[l++] = str2[i];
+    }
+    str[l] = '\0';
+}
+void main(){
+    int l,i;
+    char str[100], str2[100];
+    printf("Enter your String1: ");
+    scanf("%s",str);
+    printf("Enter your String2: ");
+    scanf("%s",str2);
+    for(i = 0; str[i] != '\0'; i++)
+        l++;
+    strConcat(str,str2,l); //str is updated to concatenated string
+    printf("The String After Concatenation is: %s",str);
+    }
+
+
+
+
+
+Day 7 Q10-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String: ");
+        String str = sc.nextLine();
+        freqCount(str);
+    }
+
+    static void freqCount(String str) {
+        int flag;
+        for (int i = 0; i < str.length(); i++) {
+            int count = 0, x = 0;
+            flag = 0;
+            for (int k = i-1; k >= 0; k--) {
+                if (str.charAt(i) == str.charAt(k)) {
+                    flag = 1;
+                    break;
+                }
+
+            }
+            if(flag == 0 ) {
+                for (int j = 0; j < str.length(); j++) {
+                    if (str.charAt(i) == str.charAt(j))
+                        count++;
+                }
+                System.out.print(str.charAt(i));
+                System.out.println(": " + count);
+            }
+
+
+        }
+    }
+}
+
+Day 7 Q11-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your String: ");
+        String str = sc.nextLine();
+        whiteSpaceRem(str);
+    }
+
+    static void whiteSpaceRem(String str) {
+        char[] ar = str.toCharArray();
+        int length = str.length();
+        if(ar[0] == ' '){
+            for(int i = 0; i<length-1; i++){
+                ar[i] = ar[i+1];
+            }
+            length--;
+        }
+        if(ar[length-1] == ' ' ){
+            length--;
+        }
+        char[] ar2 = new char[length];
+        for(int i = 0; i<length; i++){
+            ar2[i] = ar[i];
+        }
+        str = String.valueOf(ar2);
+        System.out.print("The String Becomes: "+str);
+    }
+
+}
+
+
+Day 7 Q12-
+#include <stdio.h>
+void checkVal(char a[100],int l){
+    int i;
+    if(a[0] >= 'a' && a[0] <= 'z' || a[0] >= 'A' && a[0] <= 'Z' || a[0] == '_'){
+        for(i = 1; i<l; i++){
+            if(!(a[i] >= 'a' && a[i] <= 'z' || a[i] >= 'A' && a[i] <= 'Z' || a[i] == '_' || a[i] >= '0' && a[i] <= '9') ||  a[i] == ' '){
+               printf("Not Valid");
+               break;
+            }
+        }if(i == l)
+          printf("Valid");
+    }
+    else{
+        printf("Not Valid");
+    }
+}
+int main() {
+    int l,i;
+    char a[100];
+    scanf("%[^\n]",a); //accept till next line is encountered
+    for(i = 0; a[i] != '\0'; i++){
+        l++;
+    }
+    checkVal(a,l);
+
+    return 0;
+}
+
+Day 7 Q13-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<String> str = new ArrayList<String>();
+        System.out.print("Enter your Number of  cities: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter your cities: ");
+        for(int i = 0; i<n; i++)
+            str.add(sc.nextLine());
+        sort(str);
+    }
+
+    static void sort(List<String> str) {
+//Bubble sort for alphabetical order
+        for(int i = 0; i< str.size()-1; i++){
+            for(int j = 0; j< str.size()-i-1; j++){
+                if(str.get(j).compareTo(str.get(j+1))>0){
+                    String temp = str.get(j);
+                    str.set(j, str.get(j+1));
+                    str.set(j+1, temp);
+                }
+            }
+        }
+        System.out.println("The Dictionary order is: ");
+        for(int i = 0; i< str.size(); i++)
+            System.out.println(str.get(i)+" ");
+    }
+
+}
+
+Day 8 Q1-
+
+import java.text.DecimalFormat;
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a, b & c: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        double c = sc.nextDouble();
+        rootsQuad(a,b,c);
+    }
+
+    static void rootsQuad(double a, double b, double c) {
+        double r1, r2,i1;
+       double d = (b*b - 4*a*c);
+       DecimalFormat df = new DecimalFormat();
+       df.setMaximumFractionDigits(2);
+       System.out.println("d is "+d);
+       if(d>0){ //roots are real and different
+           r1 = (-b + Math.sqrt(d))/(2*a);
+           r2 = (-b - Math.sqrt(d))/(2*a);
+           System.out.print("The roots are: "+df.format(r1)+", "+df.format(r2));
+       }
+       else if(d == 0){
+           r1 = -b /(2* a);
+           r2 = r1;
+           System.out.print("The roots are: "+df.format(r1)+", "+df.format(r2));
+       }
+       else{
+           r1 = -b/(2*a);
+           i1 = Math.sqrt(-d)/(2*a);
+           System.out.println("The roots are: "+df.format(r1)+" + "+df.format(i1)+"i"+", "+df.format(r1)+" + "+df.format(i1)+"i");
+       }
+
+    }
+
+}
+
+Day 8 Q2-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter A, B & K: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int k = sc.nextInt();
+        kthDigitPow(a,b,k);
+    }
+
+    static void kthDigitPow(int a, int b, int k) {
+        int x = (int)Math.pow(a + k,b);
+        System.out.print("The Digit required is: "+x);
+    }
+
+}
+
+Day 8 Q3-
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int N = sc.nextInt();
+        repeatedSum(N);
+    }
+
+    static void repeatedSum(int N){
+        int sum = 0;
+        while( sum >=10 || N>0 ){
+            if(N == 0){
+                N = sum;
+                sum = 0;
+                System.out.println(N);
+            }
+            sum = sum + N%10;
+            N = N/10;
+        }
+        System.out.println("The loop runs until the value of N becomes "+sum);
+    }
+
+}
+
+Day 8 Q4-
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter odd-Digit N: ");
+            int N = sc.nextInt();
+            balancedNum(N);
+        }
+        catch(InputMismatchException e) {
+            System.out.print("The Number entered is out of Range for integer");
+        }
+    }
+
+    static void balancedNum(int N){
+            int sum1 = 0, sum2 = 0;
+            String str = String.valueOf(N);
+            char[] a = str.toCharArray();
+            for (int i = 0; i < str.length() / 2; i++) {
+                sum1 += a[i];
+            }
+            for (int i = str.length() / 2 + 1; i < str.length(); i++) {
+                sum2 += a[i];
+            }
+            if (sum1 == sum2)
+                System.out.print("The Given Number " + N + " is a Balanced Number");
+            else
+                System.out.print("The Given Number " + N + " is not a Balanced Number");
+    }
+
+
+}
+
+Day 8 Q5-
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter N: ");
+            int N = sc.nextInt();
+            leastPrimeFactors(N);
+        }
+        catch(InputMismatchException e) {
+            System.out.print("The Number entered is out of Range for integer");
+        }
+    }
+
+    static void leastPrimeFactors(int N) {
+       for(int i = 1; i<=N; i++){
+           if(i == 1){
+               System.out.print(1+" ");
+               continue;
+           }
+           int count = 0;
+           int flag = 0;
+           for(int j = 2; j <=i ; j++) {
+               if (i % j == 0){
+                   int k;
+                   for(k = 2; k<=j ; k++){
+                       if(j%k == 0)
+                           count++;
+                   }
+                   if(count == 1){
+                       System.out.print(j + " ");
+                       flag = 1;
+                       break;
+
+                   }
+               }
+           }
+       }
+    }
+
+}
+
+Day 8 Q6-
+
+
+import java.text.DecimalFormat;
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+            System.out.print("Enter Radius of circle: ");
+            double r = sc.nextDouble();
+            largestRectArea(r);
+    }
+
+    static void largestRectArea(double r) {
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+        double diam = r*2;
+        //Largest rectangle in a circle is a square
+        double sideSquare = diam/Math.sqrt(2); //diagonal will be = diameter
+        System.out.println("The Area of Largest Rectangle will be: "+df.format(sideSquare*sideSquare));
+    }
+
+}
+
+Day 8 Q7-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter N: ");
+            int N = sc.nextInt();
+            PrimeFactors(N);
+        }
+        catch(InputMismatchException e) {
+            System.out.print("The Number entered is out of Range for integer");
+        }
+    }
+
+    static void PrimeFactors(int N) {
+        System.out.print("The Prime Factors are: ");
+        for(int i = 2; i <= N; i++){
+            int count = 0;
+            if(N % i == 0){
+                for(int j = 2; j <=i; j++){
+                    if(i%j == 0)
+                        count++;
+                }
+                if(count == 1)
+                    System.out.print(i+" ");
+            }
+        }
+    }
+
+}
+
+Day 9 Q1-
+
+static long nthOfSeries(long n){
+        int x = 9;
+        if( n == 1)
+          return 9;
+        for(long i = 2; i <=n; i++){
+           x += 8*(2*i-1);
+        }
+        return x;
+    }
+
+Day 9 Q2-
+
+public static int lowestTriangle(int trianglebase, int area) {
+    int h = (area*2) / trianglebase;
+    float height = (float)(area*2) / trianglebase;
+    if(h == height)
+       return h;
+    else 
+       return h+1;
+    
+    }
+
+Day 9 Q3-
+
+return n+1;
+
+Day 9 Q4-
+
+public static int handshake(int n) {
+        int hs = 0;
+    for(int i = 1; i < n; i++)
+        hs = hs + (n-i);
+    
+    return hs;
+    }
+
+Day 9 Q5-
+
+ public int numberOfSteps(int num) {
+        int count = 0;
+        if(num == 0)
+            return 0;
+         while(true){
+            
+            if(num % 2 != 0){
+                num -= 1;
+                count++;
+            }
+            else{
+                num /= 2;
+                count++;
+            }
+            if(num == 0)
+                break;
+        }
+        return count;
+    }
+
+Day 9 Q6-
+
+ public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> sf = new ArrayList<Integer>();
+        for(int i = left; i <= right ; i++){
+            int count = 0;
+            int timesDiv = 0; //times divided is the Length of the number
+            int num = i;
+            while(num>0){
+                if(num % 10 == 0){
+                    count = -1; //update to anything so that != timesDiv
+                    break;
+                }
+                if(i % (num%10) == 0)
+                    count++;
+                num /= 10;
+                timesDiv++;
+            }
+            if(count == timesDiv)
+                sf.add(i);
+        }
+        return sf;
+    }
+
+Day 9 Q7-
+
+public boolean divisorGame(int n) {
+      if(n%2==0) //can also do (n&0) == 0
+          return true;
+      return false;
+    }
+
+Day 9 Q8-
+
+Method 1(High Time Consuming Method): 
+
+import java.math.BigInteger;
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+            System.out.print("Enter N: ");
+            int N = sc.nextInt();
+            System.out.println(trailingZeroes(N));
+       
+    }
+    public static int trailingZeroes(int n) {
+        int zeroes = 0;
+        int i;
+
+        String str = String.valueOf(fact(n));
+        i = str.length() - 1;
+        while(str.charAt(i) == '0' ){
+            zeroes++;
+            i--;
+        }
+        return zeroes;
+    }
+    public static BigInteger fact(int n){
+        BigInteger fact = new BigInteger("1");
+        for(int i = 1; i<=n; i++)
+            fact = fact.multiply(BigInteger.valueOf(i));
+            System.out.println(fact);
+        return fact;
+    }
+}
+
+Method 2(Logical Approach) :
+
+public int trailingZeroes(int n) {
+        int zer = 0;
+
+        /*no. of zeroes = no. of times the factors of 10
+        appear in n, which are 2 and 5, now 2 will appear
+        after every alternative number (i.e in even factors),
+        therefore what matters the most is the number of 5s
+        which will appear because it will ultimately make
+        5*2 = 10, so number of 5s is what matters, to find no.
+        of 5s we just simply divide the number by 5^i, i starting
+        from 1 and working till the n/5^i becomes 0. The number of
+        5s will be our total number of zeroes. */
+
+        for(int i = 1; n/(int)Math.pow(5,i) > 0 ; i++)
+            zer += n/(int)Math.pow(5,i);
+        return zer;
+    }
+
+
+
+Day 9 Q9-
+
+public boolean checkPerfectNumber(int num) {
+        
+        if(num == 1)
+            return false;
+      
+        int sum = 1;
+        for(int i = 2; i<=Math.sqrt(num); i++){
+            if(num % i == 0)
+                sum = sum + i + num/i;
+                //if i is a factor then i * (some number) will also
+                // be a factor, that some number  =  num/i
+                //this also helps reducing time complexity
+        }
+        return sum == num;
+         
+    }
+
+
+Day 9 Q10-
+
+//By Sieve of eratosthenes
+    public int countPrimes(int n) {
+       boolean[] isPrime = new boolean[n];
+        for(int i = 2; i<n; i++) //putting 0 and 1 as default false
+            isPrime[i] = true;
+        //if any number is prime it must have a 
+        //factor <= its square root
+       for(int i = 2; i<= (int)Math.sqrt(n); i++){
+           if(isPrime[i] == false) //to not recheck already verified non-prime numbers
+                   continue;
+           for(int j = i*i; j<n; j=j+i ) //only multiples of prime will be marked false
+               //since this is the  sieve of eratosthenes
+               isPrime[j] = false;
+       }
+        int count = 0;
+        //counting the primes now
+        for(int i = 0; i<n; i++)
+            if(isPrime[i] == true)
+                count++;
+        return count;
+            
+   }
+
+
+
+
+
