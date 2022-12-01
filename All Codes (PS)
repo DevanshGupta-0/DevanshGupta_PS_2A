@@ -1,4 +1,4 @@
-Problem Solving Code:
+Problem Solving Codes:
 
 DAY 2 Q5-
 
@@ -701,7 +701,7 @@ public class Main {
         System.out.println("The mean is: "+mean(arr,n));
         System.out.print("The median is: "+median(arr,n));
     }
-    public static float mean(int[] a, int n){
+    public static float mean(int[] a, int n, ){
         float sum = 0;
         for(int i = 0; i<n; i++){
             sum += a[i];
@@ -775,7 +775,18 @@ public class Main {
 
 Day 4 Q3-
 
-
+class HelloWorld {
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.println(tailRecursionF(n,1));
+    }
+    public static int tailRecursionF(int n,int m){
+        if(n == 0)
+         return m;
+        m = m*n;
+        return (tailRecursionF(n-1,m));
+    }
+}
 
 
 Day 4 Q4-
@@ -967,6 +978,106 @@ public class Main {
 
 
 Day 4 Q10-
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 2;
+        int n = 30;
+        System.out.print(power(a,n));
+    }
+    public static int power(int a, int n){
+        if (n==0)
+            return 1;
+        int temp = power(a,n/2);
+        if(n%2 == 0)
+            return (temp*temp);
+        else
+            return a*temp*temp;
+    }
+}
+
+Day 4 Q11-
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        int n = 8;
+       System.out.print(fib(n,0,1));
+    }
+
+    public static int fib(int n, int f1, int f2){
+        //using tail recursion
+       if(n == 1)
+           return f1; //will only be returned when input n is given as 1, therefore we can
+                      //also return 0 at the place of f1 which is basically the same
+       if (n==2)
+           return f2; //This will be returned in every case of input except for 1
+       return fib(n-1, f2, f1+f2);
+   }
+}
+
+Day 4 Q12-
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the catAndMouse function below.
+    static String catAndMouse(int x, int y, int z) {
+    int catA,catB;
+    if(z - y >=0)
+      catB = z-y;
+    else
+      catB = -(z-y);
+    if(z - x >=0)
+      catA = z-x;
+    else
+      catA = -(z-x);
+    
+    if(catA == catB)
+     return "Mouse C";
+    else if(catA>catB)
+     return "Cat B";
+    else
+     return "Cat A";
+
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int q = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int qItr = 0; qItr < q; qItr++) {
+            String[] xyz = scanner.nextLine().split(" ");
+
+            int x = Integer.parseInt(xyz[0]);
+
+            int y = Integer.parseInt(xyz[1]);
+
+            int z = Integer.parseInt(xyz[2]);
+
+            String result = catAndMouse(x, y, z);
+
+            bufferedWriter.write(result);
+            bufferedWriter.newLine();
+        }
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}
 
 
 
@@ -1534,7 +1645,180 @@ public class Main {
 
 Day 6 Q5-
 
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("Rows & Columns for Mat.A: ");
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int[][] a = new int[m][n];
+        System.out.println("Enter the elements of Mat.A: ");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+        spiralForm(a,m,n);
+    }
 
+    public static void spiralForm(int[][] a, int m,int n){
+        int top = 0;
+        int right = n-1;
+        int left = 0;
+        int bottom = m-1;
+        while(true) {
+            //Printing Top Row
+            for (int i = left; i <= right; i++)
+                System.out.print(a[top][i] + " ");
+            top++;
+            if(top > bottom)
+                break;
+            //Printing Right most column;
+            for (int i = top; i <= bottom; i++)
+                System.out.print(a[i][right] + " ");
+            right--;
+            if(left > right)
+                break;
+            //Printing bottom most row
+            for (int i = right; i >= left; i--)
+                System.out.print(a[bottom][i]+ " ");
+            bottom--;
+            if(top > bottom)
+                break;
+            for (int i = bottom; i >= top; i--)
+                System.out.print(a[i][left]+ " ");
+            left++;
+            if(left > right)
+                break;
+        }
+    }
+}
+
+
+Day 6 Q6-
+
+#include <stdio.h>
+
+//Finding anagrams
+
+int main() {
+    char s1[100], s2[100];
+    printf("Enter String 1: ");
+    scanf("%s",s1);
+    printf("Enter String 2: ");
+    scanf("%s",s2);
+    
+    //Using Count Sort;
+    int count[26];
+    
+    //Traversing Through String 1
+    for(int i = 0; s1[i] != '\0'; i++){
+        count[(s1[i]-97)]++; //97 is ASCII for 'a'
+    }
+    
+    //Traversing through String 2
+    for(int i = 0; s2[i] != '\0'; i++)
+        count[(s2[i]-97)]--;
+    
+    //Taking the Mod(Positive) Sum
+    int sum = 0;
+    for(int i = 0; i <26; i++){
+        if(count[i] < 0)
+            sum = sum - count[i];
+        else
+            sum = sum + count[i];
+        
+    }
+        
+    printf("The minimum letters to be removed should be: %d",sum);
+    
+    return 0;
+}
+
+Day 6 Q7-
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Number: ");
+        int a = sc.nextInt();
+        String s = String.valueOf(a);
+        char[] arr = s.toCharArray();
+        int[] count = new int[10];
+
+        for(char z: arr)
+            count[(int)z-48]++;
+
+
+        for(int i = 0; i < 10; i++)
+            if(count[i] == 1)
+                System.out.print(i+" ");
+    }
+
+}
+
+Day 6 Q8-
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<map>
+using namespace std;
+
+int main() {
+    cout << "Enter the number of elements in array1: " ;
+    int n1;
+    cin >> n1;
+    string s1[n1];
+    cout << "Enter the Elements of Array1: " << endl;
+    for( int i = 0 ; i < n1; i++)
+        cin >> s1[i];
+    cout << "Enter the number of elements in array2: " ;
+    int n2;
+    cin >> n2;
+    string s2[n2];
+    cout << "Enter the Elements of Array2: " << endl;
+    for( int i = 0 ; i < n2; i++)
+        cin >> s2[i];
+        
+    map<string,int> hash_table;
+    
+    for(int i = 0; i < n1; i++){
+        hash_table[s1[i]] = 1; //marking the element to be present in first Array
+    }
+    for(int i = 0; i < n2; i++){
+        if(hash_table[s2[i]] == 1){
+            hash_table[s2[i]] = 2; //Marking that the element is present in both Arrays
+        }
+        else{
+            hash_table[s2[i]] = 1;//Marking element present in only a single array;
+        }
+    }
+    
+    cout << "The elements available in only one of the two Arrays are: ";
+    for(auto i = hash_table.begin(); i != hash_table.end(); i++){
+        if(i->second == 1 ){
+            cout << i->first <<" ";
+        }
+    }
+    cout << endl;
+    cout << "The elements available in both arrays are: ";
+    for(auto i = hash_table.begin(); i != hash_table.end(); i++){
+        if(i->second == 2){
+            cout << i->first <<" ";
+        }
+    }
+    cout << endl;
+    
+
+    return 0;
+}
+
+Day 6 Q9-
+
+{Same as Q8}
 
 
 
@@ -1740,6 +2024,90 @@ void main(){
 
 
 
+Day 7 Q8-
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter your String:");
+        String str = sc.next();
+        System.out.println("Enter your length of the String Array: ");
+        int len = sc.nextInt();
+        String[] strArray = new String[len];
+        System.out.println("Enter your elements of the String Array: ");
+        for(int i = 0; i < len; i++){
+            strArray[i] = sc.next();
+        }
+        int count = checkPrefix(str,strArray);
+        System.out.println("The Possible Prefixes are: "+count);
+    }
+
+    static int checkPrefix(String str, String[] strArray) {
+        char[] x = str.toCharArray();
+        int count = 0;
+
+        for(int i = 0; i < strArray.length; i++){
+            int j = 0;
+            for( j = 0; j < strArray[i].length(); j++){
+                if(strArray[i].length() > x.length)
+                    break;
+                if(x[j] != strArray[i].charAt(j))
+                    break;
+            }
+            if( j == strArray[i].length())
+                count++;
+        }
+
+        return count;
+    }
+
+}
+
+Day 7 Q9-
+
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter your String:");
+        String str = sc.next();
+        System.out.println("Enter your length of the String Array: ");
+        int len = sc.nextInt();
+        String[] strArray = new String[len];
+        System.out.println("Enter your elements of the String Array: ");
+        for(int i = 0; i < len; i++){
+            strArray[i] = sc.next();
+        }
+        int count = checkSuffix(str,strArray);
+        System.out.println("The Possible Suffixes are: "+count);
+    }
+
+    static int checkSuffix(String str, String[] strArray) {
+        char[] x = str.toCharArray();
+        int count = 0;
+
+        for(int i = 0; i < strArray.length; i++){
+            int j = 0, z;
+            for( j = strArray[i].length()-1, z = x.length - 1; j >= 0; j--,z--){
+                if(strArray[i].length() > x.length)
+                    break;
+                if(strArray[i].charAt(j) != x[z])
+                    break;
+            }
+            if( j == -1)
+                count++;
+        }
+
+        return count;
+    }
+
+}
 
 
 Day 7 Q10-
@@ -1932,11 +2300,38 @@ public class Main {
     }
 
     static void kthDigitPow(int a, int b, int k) {
-        int x = (int)Math.pow(a + k,b);
-        System.out.print("The Digit required is: "+x);
+        int x = (int)Math.pow(a,b);
+        String s = String.valueOf(x);
+        System.out.print("The Digit required is: "+s.charAt(k-1)); //basically from the left kth digit
     }
 
 }
+
+from the right kth digit: 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter A, B & K: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int k = sc.nextInt();
+        kthDigitPow(a,b,k);
+    }
+
+    static void kthDigitPow(int a, int b, int k) {
+        int x = (int)Math.pow(a,b);
+        int t = x/(int)Math.pow(10,k-1);
+        t = t % 10;
+        System.out.print("The Digit required is: "+ t);
+    }
+
+}
+
+
+
 
 Day 8 Q3-
 
@@ -1966,6 +2361,28 @@ public class Main {
     }
 
 }
+
+or:
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int N = sc.nextInt();
+        repeatedSum(N);
+    }
+
+    static void repeatedSum(int N){
+        if(N % 9 == 0)
+            System.out.println("The loop runs until the value of N becomes 9");
+        else
+            System.out.println("The loop runs until the value of N becomes "+N%9);
+    }
+
+}
+
 
 Day 8 Q4-
 
@@ -2300,6 +2717,72 @@ Day 9 Q10-
    }
 
 
+Day 10 Q1-
 
 
 
+
+Day 10 Q4-
+
+import java.util.*;
+import java.io.*;
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        bufferedReader.close();
+        System.out.print(betterDiv(n));
+    }
+    public static int betterDiv(int n){
+        List<Integer> div = new ArrayList<Integer>();
+        int count = 0; //for prime no.s
+        for(int i = 1; i<=n; i++){
+            if(n%i == 0){
+                div.add(i);
+                count++;
+            }
+        }
+        if(count == 2 || count == 1) //special case for 1 and decreasing complexity
+            //for prime. count 2 => prime, count 1 => for n = 1
+            return n;
+        List<Integer> divSum = new ArrayList<Integer>();
+        for(int i = 0; i < div.size(); i++){
+            int sum = 0;
+            int temp = div.get(i);
+            while(temp > 0){
+                int r = temp%10;
+                sum = sum + r;
+                temp = temp/10;
+            }
+            divSum.add(sum);
+        }
+        for(int i = 0; i< divSum.size(); i++){
+            for(int j = 0; j < divSum.size()-i-1; j++){
+                if(divSum.get(j) > divSum.get(j+1)){
+                    int temp = divSum.get(j);
+                    divSum.set(j,divSum.get(j+1));
+                    divSum.set(j+1,temp);
+                    temp = div.get(j);
+                    div.set(j,div.get(j+1));
+                    div.set(j+1,temp);
+
+                }
+            }
+        }
+        int l = divSum.size()-1; //l is the last index or the index of the highest sum
+        while( divSum.get(l) == divSum.get(l-1)){
+            l--; //checking till where do we have similar highest element
+        }
+
+        List<Integer> newDiv = new ArrayList<Integer>();
+        for(int i = l; i < div.size(); i++){
+            newDiv.add(div.get(i));
+        }
+        Collections.sort(newDiv);
+        return newDiv.get(0);
+
+    }
+}
